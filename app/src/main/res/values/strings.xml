@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Engineering Simulator</string>
+    <string name="app_title">Engineering Simulator</string>
+    <string name="xp_label">XP: 0</string>
+    <string name="diagnose_fault">Diagnose Fault</string>
+    <string name="use_wrench">Use Wrench</string>
+    <string name="use_coolant">Use Coolant</string>
+</resources>
