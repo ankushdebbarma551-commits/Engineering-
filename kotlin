@@ -1,0 +1,10 @@
+
+
+class XPManager {
+
+    var xp = 0
+
+    fun addXP(amount: Int) {
+        xp += amount
+    }
+}
