@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/faultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Engineering Simulator"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/xpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XP: 0"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/diagnoseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Diagnose Fault"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/wrenchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use Wrench"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/coolantButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use Coolant"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
