@@ -1,0 +1,60 @@
+package com.example.engineeringsimulator
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var faultText: TextView
+    private lateinit var xpText: TextView
+
+    private val faultManager = FaultManager()
+    private val xpManager = XPManager()
+    private val toolSystem = ToolSystem()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        faultText = findViewById(R.id.faultText)
+        xpText = findViewById(R.id.xpText)
+
+        val diagnoseButton = findViewById<Button>(R.id.diagnoseButton)
+        val wrenchButton = findViewById<Button>(R.id.wrenchButton)
+        val coolantButton = findViewById<Button>(R.id.coolantButton)
+
+        generateNewFault()
+
+        diagnoseButton.setOnClickListener {
+            faultText.text = "Fault: ${faultManager.currentFault}"
+        }
+
+        wrenchButton.setOnClickListener {
+            repair("Wrench")
+        }
+
+        coolantButton.setOnClickListener {
+            repair("Coolant")
+        }
+    }
+
+    private fun repair(tool: String) {
+        val repaired = toolSystem.repairFault(tool, faultManager.currentFault)
+
+        if (repaired) {
+            xpManager.addXP(25)
+            faultText.text = "Machine repaired successfully!"
+            xpText.text = "XP: ${xpManager.xp}"
+
+            generateNewFault()
+        } else {
+            faultText.text = "Wrong tool used!"
+        }
+    }
+
+    private fun generateNewFault() {
+        faultManager.generateFault()
+    }
+}
