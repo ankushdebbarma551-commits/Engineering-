@@ -1,0 +1,13 @@
+
+
+class ToolSystem {
+
+    fun repairFault(tool: String, fault: String): Boolean {
+
+        return when {
+            tool == "Wrench" && fault == "Bearing Failure" -> true
+            tool == "Coolant" && fault == "Overheated Motor" -> true
+            else -> false
+        }
+    }
+}
